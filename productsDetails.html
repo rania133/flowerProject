@@ -3,74 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product Details</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
-    <nav class="navbar">
-        <img src="list.svg" class="menu-icon" alt="list"> 
-        
-        <h1 class="navbar-brand">Flower </h1>
-      
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <a  href="index.html">Home </a>
-            </li>
-            <li class="nav-item ">
-                <a  href="about.html">About </a>
-              </li>
-            <li class="nav-item">
-              <a href="products.html">Products</a>
-            </li>
-            <li class="nav-item">
-              <a  href="contact.html">Contact</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <div class="icons">
-          <img class="icon-list" src="like.png" alt="like">
-          <div class="cart-icon">
-            <img  class="icon-list" src="grocery-store.png" alt="cart">
-            <span>0</span>
-          </div>
-          <img  class="icon-list" src="user.png" alt="user">
-        </div>
-        </div>
-      </nav>
-
-
-      <div class="pro-details">
-
-        <h1>
-            Tulip Flower Pot
-        </h1>
-
-        <div class="details">
-            <img src="img11.jpg" alt="tulip" class="flower-img">
-            <p>
-                Beautiful & Colorful - Adds a fresh, elegant look to any space. <br>
-
-Easy to Care For - Needs sunlight, well-draining soil, and occasional watering. <br>
-
-Perfect for Indoors & Outdoors - Great for homes, balconies, and gardens. <br>
-
-Symbol of Love & Happiness - A thoughtful gift for any occasion. <br>
-
-Affordable - Prices is 15.99$. <br>
-            </p>
-        </div>
-
-
-
-
-        </div>
-
-
+  <nav class="navbar">
+    <img src="images/list.svg" class="menu-icon" alt="list"> 
     
+    <h1 class="navbar-brand">Flower </h1>
+  
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a  href="index.html">Home </a>
+        </li>
+        <li class="nav-item ">
+            <a  href="about.html">About </a>
+          </li>
+        <li class="nav-item">
+          <a href="products.html">Products</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+
+    <div class="pro-details">
+        <h1 id="product-name"></h1>
+        <div class="details">
+            <img id="product-image" class="flower-img">
+            <h2 id="product-description"></h2>
+            <p id="product-price"></p>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get('name');
+        const productImage = urlParams.get('image');
+        const productPrice = urlParams.get('price');
+        const productDescription = urlParams.get('desc');
+
+        // Set product details dynamically
+        document.getElementById('product-name').innerText = productName;
+        document.getElementById('product-image').src = productImage;
+        document.getElementById('product-description').innerText = productDescription;
+        document.getElementById('product-price').innerHTML = `<br><br><br><br>Price: $${productPrice}`;
+    </script>
+
 </body>
 </html>

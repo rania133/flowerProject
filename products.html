@@ -6,211 +6,128 @@
     <title>Flower</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body  class="showCart">
+<body class="showCart">
     <nav class="navbar">
-        <img src="list.svg" class="menu-icon" alt="list"> 
-        
-        <h1 class="navbar-brand">Flower </h1>
-      
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <a  href="index.html">Home </a>
-            </li>
-            <li class="nav-item ">
-                <a  href="about.html">About </a>
-              </li>
-            <li class="nav-item">
-              <a href="products.html">Products</a>
-            </li>
-            <li class="nav-item">
-              <a  href="contact.html">Contact</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <div class="icons">
-          <img class="icon-list" src="like.png" alt="like">
-          <div class="cart-icon">
-            <img  class="icon-list" src="grocery-store.png" alt="cart">
-            <span>0</span>
-          </div>
-          <img  class="icon-list" src="user.png" alt="user">
+        <img src="images/list.svg" class="menu-icon" alt="list"> 
+        <h1 >Flower</h1>
+        <ul >
+            <li ><a href="index.html">Home</a></li>
+            <li ><a href="about.html">About</a></li>
+            <li ><a href="products.html">Products</a></li>
+        </ul>
+        <form id="searchForm" class="form-inline my-2 my-lg-0">
+            <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+            <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+        </form>
+        <div class="icons">
+            <img class="icon-list" src="images/like.png" alt="like">
+            <div class="cart-icon">
+                <a href="cart.html"><img class="icon-list" src="images/grocery-store.png" alt="cart"></a>
+                <span>0</span>
+            </div>
+            <img class="icon-list" src="images/user.png" alt="user">
         </div>
-        </div>
-      </nav>
+    </nav>
 
-
-      <div class="listproduct">
-
-        <h1>
-            Ptroducts
-        </h1>
-        <div class="container">
-        <div class="item">
-            <a href="productsDetails.html">
-            <img src="img1.jpg" alt="">
-            <h2>Flower Pot</h2>
-        </a>
-
-            <div class="price">15.99$</div>
-            <button class="addCart">
-                Add To Cart
-            </button>
-        </div>
-
-        <div class="item">
-            <a href="productsDetails.html">
-
-            <img src="img2.jpg" alt="">
-            <h2>Flower Pot</h2>
-            </a>
-            <div class="price">15.99$</div>
-            <button class="addCart">
-                Add To Cart
-            </button>
-        </div>
-
-
-
-        <div class="item">
-            <a href="productsDetails.html">
-
-            <img src="img3.jpg" alt="">
-            <h2>Flower Pot</h2>
-            </a>
-            <div class="price">15.99$</div>
-            <button class="addCart">
-                Add To Cart
-            </button>
-        </div>
-
-        <div class="item">
-            <a href="productsDetails.html">
-
-            <img src="img4.jpg" alt="">
-            <h2>Flower Pot</h2>
-            </a>
-            <div class="price">15.99$</div>
-            <button class="addCart">
-                Add To Cart
-            </button>
-        </div>
-
-        <div class="item">
-            <a href="productsDetails.html">
-
-            <img src="img5.jpg" alt="">
-            <h2>Flower Pot</h2>
-            </a>
-            <div class="price">15.99$</div>
-            <button class="addCart">
-                Add To Cart
-            </button>
-        </div>
-
-
-        <div class="item">
-            <a href="productsDetails.html">
-
-            <img src="img6.jpg" alt="">
-            <h2>Flower Pot</h2>
-            </a>
-            <div class="price">15.99$</div>
-            <button class="addCart">
-                Add To Cart
-            </button>
-        </div>
-
-      </div>
-
-
-
+    <div class="listproduct">
+        <h1>Products</h1>
+        <div class="container" id="product-container"></div>
     </div>
 
-      <div class="cartTab">
-        <h1>Shopping Cart</h1>
-        <div class="listCart">
-            <div class="item">
-                <div class="image">
-                    <img src="img1.jpg" alt="">
-                </div>
-                <div class="name">
-                    Name
-                </div>
-                <div class="totalPrice">
-                    $15.99
-                </div>
-                <div class="quantity">
-                    <span class="minus">-</span>
-                    <span>1</span>
-                    <span class="plus">+</span>
-                </div>
-                
-            </div>
-
-        </div>
-        <div class="btn">
-            <button class="close">CLOSE</button>
-            <button class="checkout">CheckOut</button>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <footer class="footer">
+    <footer class="footer">
         <div class="quick-links">
-            <h3> Quick Links</h3>
+            <h3>Quick Links</h3>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
         <div class="extra-links">
-            <h3> Extra Links</h3>
+            <h3>Extra Links</h3>
             <ul>
                 <li><a href="#">My Account</a></li>
                 <li><a href="#">My Order</a></li>
                 <li><a href="#">My Favorite</a></li>
-              
             </ul>
         </div>
         <div class="locations">
-            <h3> Locations</h3>
+            <h3>Locations</h3>
             <ul>
                 <li><a href="#">Egypt</a></li>
                 <li><a href="#">USA</a></li>
                 <li><a href="#">Japan</a></li>
                 <li><a href="#">India</a></li>
-              
             </ul>
         </div>
         <div class="contact-info">
-            <h3> Contact Info</h3>
+            <h3>Contact Info</h3>
             <ul>
                 <li><a href="">+123-456-7890</a></li>
-                <li><a href="">example@gamil.com</a></li>
-                <li><a href="">Egypt,october-400104</a></li>
+                <li><a href="">example@gmail.com</a></li>
+                <li><a href="">Egypt, October-400104</a></li>
             </ul>
-            
         </div>
+    </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const products = [
+                { id: 1, name: "Roses", price: 12.99, image: "images/img1.jpg", desc: "Symbol of love and passion, perfect for any occasion." },
+                { id: 2, name: "Lily", price: 13.99, image: "images/img2.jpg", desc: "Elegant and fragrant, ideal for a peaceful atmosphere." },
+                { id: 3, name: "Dahlia", price: 11.99, image: "images/img3.jpg", desc: "Known for its vibrant colors and stunning appearance." },
+                { id: 4, name: "Tulip", price: 10.99, image: "images/img4.jpg", desc: "Classic spring bloom, representing love and happiness." },
+                { id: 5, name: "Calla", price: 12.99, image: "images/img5.jpg", desc: "Graceful and stylish, symbolizing purity and rebirth." },
+                { id: 6, name: "Aster", price: 11.99, image: "images/img6.jpg", desc: "A late summer beauty, symbolizing patience and elegance." }
+            ];
 
+            function updateCartCount() {
+                const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+                document.querySelector(".cart-icon span").innerText = count;
+                localStorage.setItem("cartCount", count);
+            }
 
-     </footer>
-    
+            function addToCart(product) {
+                const existingProduct = cart.find(item => item.id === product.id);
+                if (existingProduct) {
+                    existingProduct.quantity += 1;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartCount();
+            }
+
+            function displayProducts(filteredProducts) {
+                const container = document.getElementById("product-container");
+                container.innerHTML = "";
+                filteredProducts.forEach((product) => {
+                    const item = document.createElement("div");
+                    item.classList.add("item");
+                    item.innerHTML = `
+                        <a href="productsDetails.html?name=${encodeURIComponent(product.name)}&image=${encodeURIComponent(product.image)}&price=${product.price}&desc=${encodeURIComponent(product.desc)}">
+                            <img src="${product.image}" alt="${product.name}">
+                            <h2>${product.name}</h2>
+                        </a>
+                        <div class="price">$${product.price}</div>
+                        <button class="addCart">Add To Cart</button>
+                    `;
+                    item.querySelector(".addCart").addEventListener("click", () => addToCart(product));
+                    container.appendChild(item);
+                });
+            }
+
+            document.getElementById("searchForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+                const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchQuery));
+                displayProducts(filteredProducts);
+            });
+
+            displayProducts(products);
+            updateCartCount();
+        });
+    </script>
 </body>
 </html>

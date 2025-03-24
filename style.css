@@ -102,7 +102,7 @@ a:is(:link,:active,:visited).active{
     display: flex;
     align-items: center;
     min-height: 100vh;
-    background:url('./تنزيل.jpg')no-repeat;
+    background:url('./images/تنزيل.jpg')no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -506,6 +506,7 @@ text-align: center;
 
 }
 
+
 .pro-details .details img{
     border-radius: 20px;
    
@@ -513,7 +514,7 @@ text-align: center;
 }
 
 .pro-details .details p{
-    color: rgb(102, 101, 101);
+    color: rgb(0, 0, 0);
     font-family:Arial, Helvetica, sans-serif;
 
 }

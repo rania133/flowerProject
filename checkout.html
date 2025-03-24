@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="list.svg" class="menu-icon" alt="list"> 
+        
+        <h1 class="navbar-brand">Flower </h1>
+      
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a  href="index.html">Home </a>
+            </li>
+            <li class="nav-item ">
+                <a  href="about.html">About </a>
+              </li>
+            <li class="nav-item">
+              <a href="products.html">Products</a>
+            </li>
+          </ul>
+          <div class="icons">
+          <img class="icon-list" src="images/like.png" alt="like">
+          <div class="cart-icon">
+            <img  class="icon-list" src="images/grocery-store.png" alt="cart">
+            <span>0</span>
+          </div>
+          <img  class="icon-list" src="images/user.png" alt="user">
+        </div>
+        </div>
+      </nav>
+      <div class="contact">
+        <h1>
+            Contact Us
+        </h1>
+        <form action="" class="contact-details">
+            
+                <input type="text" name="" placeholder="name" id="" required>
+           
+                <input type="email" name="" placeholder="email" id="" required>
+            
+                <input type="text" name="" placeholder="number" id="" required>
+
+                <input type="text" placeholder="Address" required>
+            
+               <textarea name="" placeholder="message" id=""></textarea>
+
+               <h2>Payment Method</h2>
+               <select required>
+                   <option value="credit">Credit Card</option>
+                   <option value="paypal">PayPal</option>
+                   <option value="cash">Cash on Delivery</option>
+               </select>
+               
+
+               <h2>Order Summary</h2>
+               <div class="order-summary" id="orderSummary">
+                   <!-- Cart items will be dynamically inserted here -->
+               </div>
+               <p>Total Price: <span id="totalPrice">$0</span></p>
+               
+               <button  type="submit" >Place Order</button>
+            
+            
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+
+      <footer class="footer">
+        <div class="quick-links">
+            <h3> Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+        </div>
+        <div class="extra-links">
+            <h3> Extra Links</h3>
+            <ul>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">My Order</a></li>
+                <li><a href="#">My Favorite</a></li>
+              
+            </ul>
+        </div>
+        <div class="locations">
+            <h3> Locations</h3>
+            <ul>
+                <li><a href="#">Egypt</a></li>
+                <li><a href="#">USA</a></li>
+                <li><a href="#">Japan</a></li>
+                <li><a href="#">India</a></li>
+              
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h3> Contact Info</h3>
+            <ul>
+                <li><a href="">+123-456-7890</a></li>
+                <li><a href="">example@gamil.com</a></li>
+                <li><a href="">Egypt,october-400104</a></li>
+            </ul>
+            
+        </div>
+
+
+
+     </footer>
+     <script>
+     document.addEventListener("DOMContentLoaded", () => {
+      const count = localStorage.getItem("cartCount")
+      document.querySelector(".cart-icon span").innerText = count;
+
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const orderSummaryContainer = document.getElementById("orderSummary");
+      const totalPriceElement = document.getElementById("totalPrice");
+      
+      function renderOrderSummary() {
+          orderSummaryContainer.innerHTML = "";
+          let total = 0;
+          
+          cart.forEach((item) => {
+              total += item.price * item.quantity;
+              
+              const itemElement = document.createElement("div");
+              itemElement.classList.add("order-item");
+              itemElement.innerHTML = `
+                  <p>${item.name} - ${item.quantity} x $${item.price.toFixed(2)}</p>
+              `;
+              orderSummaryContainer.appendChild(itemElement);
+          });
+          
+          totalPriceElement.innerText = `$${total.toFixed(2)}`;
+      }
+      
+      renderOrderSummary();
+  });
+
+  document.querySelector(".contact-details").addEventListener("submit", function(event) {
+    if (!this.checkValidity()) {
+        // Prevent form submission if validation fails
+        event.preventDefault();
+        event.stopPropagation();
+    } else {
+        event.preventDefault(); // Prevent default form submission behavior
+        window.alert("Thank you! You will be redirected to the homepage now :)");
+        window.location.replace("index.html");
+        localStorage.setItem("cartCount", 0);
+        localStorage.removeItem("cart");
+    }
+});
+
+  </script>
+</body>
+</html>
